@@ -4,7 +4,7 @@
 **Source:** Extracted from the three L.I.N.K. tool mockups — `cstar-mockup-v2.html`, `how-to-hub-mockup.html`, `LINK_Task_Builder_v2.html`.
 **Purpose:** Lock the visual design language the portfolio site inherits, *before any site code is written*. This is my read of the shared language across the three tools, with every disagreement between them flagged for your decision rather than silently resolved.
 
-**Status:** DRAFT — awaiting your review + icon identification. No site code until you approve.
+**Status:** ✅ APPROVED + LOCKED (Drizzy, 04 JUL 2026). All conflicts C1–C8 resolved — see §7. The token set in §8 is final and the site builds against it.
 
 ---
 
@@ -146,31 +146,27 @@ Per your instruction, here is *every* icon/logo/glyph asset found across the thr
 
 ---
 
-## 7. Conflicts I will NOT resolve myself — your decisions
+## 7. Conflicts — ALL RESOLVED (Drizzy, 04 JUL 2026)
 
-Please answer these; I'll bake the answers into a locked token set before building.
+**C1 — Page background.** ✅ `#1e1e1e` (C-STAR/How2Hub majority).
 
-**C1 — Page background.** `#1e1e1e` (C-STAR + How2Hub, 2 of 3) vs `#262626` (Task Builder). → *Recommend `#1e1e1e`.*
+**C2 — Primary text white.** ✅ `#F2F2F2`.
 
-**C2 — Primary text white.** `#F2F2F2` neutral (C-STAR + How2Hub) vs `#F8F8FF` blue-white (Task Builder). → *Recommend `#F2F2F2`.*
+**C3 — Header background.** ✅ `#333333` with the 2px gold underline.
 
-**C3 — Header background.** `#333333` (C-STAR + How2Hub) vs `#2e2e2e` (Task Builder). → *Recommend `#333333` to match cards, with the 2px gold underline.*
+**C4 — Card corner radius.** ✅ **12px.**
 
-**C4 — Card corner radius.** 8px (C-STAR + How2Hub) vs 12px (Task Builder). → *Recommend 12px for the portfolio* (slightly softer reads better at landing-page scale) — but this is aesthetic; tell me if you want the tighter 8px to match the tools exactly.
+**C5 — Status color.** ✅ **Green/red allowed, softer C-STAR pair** (`#6fbf73` / `#e06c6c`). Explicit intent: *the 90%-vs-13% turnaround must read visually.*
 
-**C5 — Success/danger hues** (only relevant if we show status color, e.g. measured 90% "up" vs 13% baseline). Green `#6fbf73` vs `#63d68b`; Red `#e06c6c` vs `#ff5b5b`. → *Recommend the softer C-STAR pair (`#6fbf73` / `#e06c6c`)* — less alarming, better next to gold. Or: use **gold-only, no green/red at all** on the portfolio (most restrained). Your call on whether status color appears at all.
+**C6 — Section-label divider.** ✅ Flex-fill line to the right.
 
-**C6 — Section-label divider.** Flex-fill line to the right (C-STAR/How2Hub) vs full-width underline (Task Builder). → *Recommend the flex-fill-right variant* (more elegant on a scrolling page).
+**C7 — Hero headline font.** ✅ System Segoe stack only, no web fonts.
 
-**C7 — Hero headline font.** System Segoe stack everywhere (recommended, on-brand) vs one self-hosted display face for the hero headline only. → *Recommend system-only.*
-
-**C8 — Site icon.** ✅ RESOLVED: `Compass logo LINK.png` (gold compass rose), used as-is. See §6.
+**C8 — Site icon.** ✅ `Compass logo LINK.png` (gold compass rose), used as-is, favicon + hero mark. See §6.
 
 ---
 
-## 8. Proposed locked token set (pending your §7 answers)
-
-This is what I'll build against if you accept every recommendation as-is. Nothing here is final until you confirm.
+## 8. LOCKED token set (final — the site builds against this)
 
 ```css
 :root{
@@ -208,8 +204,5 @@ This is what I'll build against if you accept every recommendation as-is. Nothin
 
 ---
 
-### What I need from you to move to Step 2
-1. Answers to **C1–C7** (or "take all your recommendations").
-2. **C8 — the site icon** (a number from §6).
-
-On approval I build **only the hero, two directions** (same palette, differing layout + tone) for you to pick in-browser. No further code until you lock a direction.
+### Step 2 status
+Spec approved in full. Next gate: two hero directions (`hero-direction-a.html`, `hero-direction-b.html`) — same locked palette, differing layout and tone. Drizzy reviews both in-browser locally and locks one direction before any further site code.
