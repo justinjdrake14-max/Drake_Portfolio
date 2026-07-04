@@ -137,7 +137,12 @@ Per your instruction, here is *every* icon/logo/glyph asset found across the thr
 **Status-dot system (colored circles):**
 15. Frequency dots 🔴🟡🟢🔵⚪ / colored `<span>` dots — Task Builder + C-STAR calendar legend. A system, not a single mark.
 
-> **Your call:** which numbered item is the site icon? My working assumption is **#1 (the "LNK" monogram box)** for favicon + hero mark unless you say otherwise. I will not proceed on that assumption — I'll wait for your pick.
+> **RESOLVED (Drizzy, 04 JUL 2026):** the site icon is none of the mockup glyphs — it is the **gold compass rose mark** supplied separately: `Compass logo LINK.png` (1024×1024 PNG, gold rose with N/W/E cardinals, "L.I.N.K." wordmark beneath, on near-black ~#111 background). **Used as-is for favicon and hero mark. LOCKED, non-negotiable.**
+>
+> Practical notes (file untouched, these are page-side accommodations only):
+> - The PNG background is solid near-black (~`#111`), not transparent. The hero places the mark on a matching near-black field so no square edge shows; at favicon size the dark square reads as intended on any tab bar.
+> - The compass rose is a perfect thematic fit: L.I.N.K. = Leader's Integration and **Navigation** Kit.
+> - The mockup "LNK" monogram box (§6 item 1) remains available as the compact in-page nav mark if the full compass PNG is too heavy for the sticky header — flagged as an open styling call for the hero A/B round, not resolved here.
 
 ---
 
@@ -159,7 +164,7 @@ Please answer these; I'll bake the answers into a locked token set before buildi
 
 **C7 — Hero headline font.** System Segoe stack everywhere (recommended, on-brand) vs one self-hosted display face for the hero headline only. → *Recommend system-only.*
 
-**C8 — Site icon.** §6 above — which numbered asset. (Default guess: #1, the LNK monogram box.)
+**C8 — Site icon.** ✅ RESOLVED: `Compass logo LINK.png` (gold compass rose), used as-is. See §6.
 
 ---
 
