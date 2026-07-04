@@ -9,9 +9,10 @@
 
 Build a live, public, interactive portfolio website hosted on GitHub Pages and linked from the resume. A hiring manager clicks the URL and gets a full tour of L.I.N.K.: the problem, the program authored, the system built, an explorable architecture map, screenshots, measured adoption numbers, and honestly labeled projections.
 
-The site proves two claims:
-1. This is a comprehensive solution to a big organizational problem. The builder thought of everything. Show, do not tell.
-2. The builder has been performing the Power Platform Functional Consultant role at division scale for eighteen months. Every quality the role demands maps to a named artifact.
+The site proves three claims:
+1. Comprehensive solution to a big organizational problem. The builder thought of everything. Show, do not tell.
+2. The builder has performed the Power Platform Functional Consultant role at division scale for eighteen months: every task the role demands maps to a named artifact (the tasks), and every artifact demonstrates governance, auditability, documentation, ownership, and lifecycle discipline — the exact instincts that prevent the sprawl and technical debt the low-code industry names as its top risk (the mind).
+3. The builder is a cleared, GCC High-native, federal-fluent modernizer — the profile federal low-code contractors cannot hire off the street (the moat).
 
 Two viewing modes drive all design decisions:
 - **Skim mode (60 seconds):** landing page alone tells the whole story. Numbers up front.
@@ -21,20 +22,22 @@ Two viewing modes drive all design decisions:
 
 ## 2. Story Arc (Landing Page Narrative)
 
-Six beats, top to bottom:
+Seven beats (0–6), top to bottom:
 
-1. **PROBLEM.** New recruiter training was inconsistent by unit, tracked in spreadsheets and memory, validated by informal checkboxes, pencil whipped under time pressure. Result: 13% ATP certification completion over the prior 12 months. No audit trail, no chain of command visibility, no protection for the soldier who never received real training.
+0. **WHO.** This is a portfolio. Identity first: Justin Drake, Power Platform Functional Consultant. Active Secret clearance. U.S. Army veteran, 20 years. Value line: self-taught the platform and single-handedly built and fielded the system of record for recruiter onboarding and certification across a 10,000-person organization — solo, in federal GCC High, at zero licensing cost. L.I.N.K. is presented as THE FEATURED PROJECT, not the site's identity.
 
-2. **CONSTRAINT.** Government cloud environment. No budget, no dev team, no Dataverse premium licensing. One builder, standard licenses, SharePoint as the data layer. [OPEN: confirm final public constraint list.]
+1. **PROBLEM.** New recruiter training was inconsistent by unit, tracked in spreadsheets and memory, validated by informal checkboxes, pencil whipped under time pressure. Result: 13% ATP certification completion over the prior 12 months. No audit trail, no chain of command visibility, no protection for the soldier who never received real training. Frame as legacy-process modernization: a mission-critical process running on spreadsheets, memory, and informal checkboxes — the classic legacy state federal modernization work targets.
+
+2. **CONSTRAINT AS CREDENTIAL.** Federal GCC High — the sovereign, compliance-bound government cloud. No budget, no dev team, no premium licensing. One cleared builder, standard connectors, SharePoint data layer. Two-sided framing rule: these are constraints overcome AND a credential moat — hands-on delivery inside the hardest, most compliance-bound version of the platform, an environment accessible only to screened U.S. persons. Copy must carry both meanings.
 
 3. **THE PROGRAM.** Before the platform existed, the doctrine did. Authored the modern ATP itself: 4 domains, 23 capabilities, 34 tasks, 6-checkpoint feedback framework, UR 350-1 Appendix J rewrite, OPORD 26-0016, SOP, 34 Interactive Trainer's Guides, ATP Recruiter's Guide, orientation videos, 21-minute private-proof video SOP covering every role from station commander up, facilitator scripts, checkpoint email packages, Dead Reckoning podcast series. Program architect first, platform builder second.
 
 4. **THE SYSTEM.** L.I.N.K. (Leader's Integration and Navigation Kit). The better mousetrap that makes training a matter of objective, forensic truth. 3 canvas apps, ~19 Power Automate flows, SharePoint data layer, 4 Power BI reports, Palantir/Vantage integration. System of record under general officer signed OPORD 26-0016, launched division wide 01 JUN 2026.
 
-5. **SCALE.** 2,000+ registered users four weeks after launch. Nearly 5,000 soldiers enrolled in the ATP one month in. ~14,000 tracked production personnel. 10/10 training sessions delivered across all brigades, 1,000+ leaders trained.
+5. **SCALE.** 2,000+ registered users four weeks after launch. Nearly 5,000 soldiers enrolled in the ATP. 10,000-person organization. 1,800 command teams trained — every station, company, and battalion in the division, in person. (The ~14,000 / ~28,000 figures are internal ATP Monitor identity-resolution mechanics ONLY — never in hero or scale copy. The "10/10 sessions, all brigades" claim is retired: factually misleading.)
 
 6. **RESULTS.** Two tiers, honestly framed:
-   - **Measured (month one):** ATP compliance north of 90% across the board, against a 13% baseline. 2,000+ registered users in four weeks. Framed as adoption velocity.
+   - **Measured:** Approved public phrasing: "ATP certification completion has achieved and maintained above 90% since launch, against a 13% baseline." "Maintained since launch" is the ONLY permitted time framing — never "month one," never "in one month," anywhere it appears. The 2,000+ users / four weeks adoption-velocity claim stays (registration metric, honestly time-stamped).
    - **Projected (labeled as projection, causal chain shown):** two-sided attack drives a targeted 10% increase in recruiter first-year production, an estimated 4% overall bottom line impact. The causal chain: structured curriculum arms trainers from the top, frictionless access pulls recruiters in from the bottom, and even the least engaged station commander now delivers decent training.
    - Copy rule: never present the projection as a result. The honesty is a credibility asset.
 
@@ -46,14 +49,14 @@ Single page site with anchored sections plus the interactive map view.
 
 | # | Section | Content | Mode |
 |---|---------|---------|------|
-| 1 | Hero | System name, one-liner, headline stats (users, compliance vs baseline, apps/flows, brigades), CTAs: Explore the System / Contact | Skim |
+| 1 | Hero | Identity strip: JUSTIN DRAKE — POWER PLATFORM FUNCTIONAL CONSULTANT · PORTFOLIO · Active Secret clearance. Compass mark + L.I.N.K. framed as FEATURED PROJECT. Value-prop line (Beat 0). One-line problem→outcome frame in civilian language. Stat cards: 2,000+ users/four weeks · 13% baseline → 90%+ certification completion, maintained since launch · 3 apps · nearly 20 flows · 4 BI reports, solo build, standard licenses · 1,800 command teams trained, every echelon, division-wide. CTAs: Explore the System / Contact | Skim |
 | 2 | The Problem | Beats 1 and 2 | Skim |
 | 3 | The Program | Beat 3. The authorship stack, itemized by name | Skim/Dig |
 | 4 | The System | Beat 4. Component cards; click opens detail panel | Dig |
 | 5 | System Map | Interactive architecture diagram (Section 7) | Dig |
 | 6 | Scale and Rollout | Beat 5, rollout timeline | Skim |
 | 7 | Results | Beat 6 | Skim |
-| 8 | How It Was Built | Origin story (built the battle rhythm tool for self, discovered the broken ATP, had the system nearly alpha ready when the command came asking). Defense/offense frame: the app is defense (integrity, auditability, legally defensible records), the content is offense (capability, time to proficiency, production lift). Constraint-questioning stories: nightly refresh "impossible" in the environment, done anyway without violating security; standard license architecture. Design philosophy: the right path is the path of least resistance; data illuminates, it does not punish | Dig |
+| 8 | How It Was Built | Origin story (battle rhythm tool → discovered the broken ATP → nearly alpha-ready when command came asking). Defense/offense frame: app is defense (integrity, auditability, legally defensible records), content is offense (capability, time to proficiency, production lift). THE ANTI-SPRAWL THREAD: every forensic design choice named as the answer to a documented industry failure mode — immutable audit log vs. no audit trail; self-healing access + Registry Manager + G6/G3-7 ownership split codified in a signed OPORD vs. orphaned ownership and credential debt; validation chains vs. flows that "mostly work"; anonymity-by-architecture and sterilization pipeline vs. data leaking into wrong environments; SOP + handoff docs + Tier 1/2/3 support model vs. undocumented estates. THE SUCCESSION CLAIM closes the thread: "The system was deliberately engineered to outlive its builder — codified ownership (OPORD-signed G6/G3-7 split), Tier 1/2/3 support model, self-healing access management, and full handoff documentation, designed from day one for the builder's planned departure. The number-one cause of low-code system death is the builder leaving; this system's succession plan shipped before launch." THE REUSABILITY THREAD: the AI-augmented tooling (Task Builder, ITG engine) framed as accelerator thinking — repeatable machinery, not one-offs. Constraint-questioning stories (nightly refresh "impossible," done without violating security; standard-license architecture). Design philosophy: the right path is the path of least resistance; data illuminates, it does not punish | Dig |
 | 9 | Consultant Competency Map | Section 4 rendered as an interactive checklist: JD requirement to named artifact | Dig |
 | 10 | Roadmap | Section 8, one line per module, no connectors drawn | Skim |
 | 11 | About / Contact | Bio: 20 years Army, certified instructor and training developer, Master Trainer, MBA candidate Dec 2026, active Secret clearance, transitioning. Closing beat: performed this role verbatim for eighteen months before learning it had a name. Contact: [OPEN: email / LinkedIn, Drizzy provides at build time] | Skim |
@@ -63,6 +66,8 @@ Single page site with anchored sections plus the interactive map view.
 ## 4. Functional Consultant Competency Map
 
 Synthesized from the Microsoft PL-200 role definition and current market job descriptions (requirements gathering, functional design, solution configuration, integration, documentation, training and enablement, adoption, governance). Procentrix-weighted but universal. Each row becomes a site element: requirement, evidence, artifact.
+
+Render rule: each row is requirement → artifact → durability. The third element is one line on why the solution won't rot — the governance/lifecycle/documentation discipline that prevents the sprawl and technical debt failure modes.
 
 | FC Competency | L.I.N.K. Evidence |
 |---|---|
@@ -77,6 +82,7 @@ Synthesized from the Microsoft PL-200 role definition and current market job des
 | Solution governance and lifecycle | Technical vs program ownership split (G6/G3-7), change authority gated by approval chains, curriculum modification workflows in the Task Manager app |
 | Problem solving under constraints | Nightly refresh workaround, standard-license architecture, anonymity-by-architecture, self-healing access management |
 | Communication across technical and non-technical audiences | Every artifact above had a different audience, from general officers to brand new recruiters |
+| Federal compliance fluency | Entire system delivered in GCC High on standard connectors: sovereign-cloud constraints, records defensibility, role-gated access, anonymity-by-architecture — cleared, federal-native delivery |
 | Certification | PL-200 in progress [exam retires 31 AUG 2026, urgent] |
 
 ---
@@ -172,12 +178,13 @@ OPORD 26-0016 (general officer signed, division wide). UR 350-1 Appendix J rewri
 | Metric | Value | Status |
 |---|---|---|
 | Baseline ATP certification completion, prior 12 months | 13% | Measured |
-| ATP compliance, month one post-launch | >90% | Measured |
+| ATP certification completion | 13% baseline → >90%, maintained since launch | Measured. "Maintained since launch" is the only permitted time framing in public copy |
 | Registered L.I.N.K. users, week four | 2,000+ | Measured |
 | Soldiers enrolled in ATP, month one | ~5,000 | Measured |
 | Tracked production personnel (ATP Monitor population) | ~14,000 | Measured (distinct claim from registered users; use each correctly) |
 | Total assigned personnel in source data | ~28,000 | Context for the identity-resolution problem |
-| Training sessions delivered / leaders trained | 10/10, 1,000+ | Measured |
+| Command teams trained | 1,800 (station: 1,328 · company: ~450 · battalion: 38 + staffs) — every echelon, division-wide, in person | Measured, resume-aligned. Unit of count is COMMAND TEAMS, never "leaders" or "people"; actual human count ~3,000+ but no hard headcount exists, so it is never cited publicly |
+| Organization size (public framing) | 10,000-person organization | Resume-aligned. 14,000/28,000 reserved for internal Monitor mechanics only |
 | Personnel aware of program | ~1,800 | Superseded by launch numbers; retire this figure |
 | Checkpoint survey inflow | ~12,500 rows/year | Structural |
 | Projected first-year production increase | +10% | Projection, labeled |
@@ -242,6 +249,9 @@ Fallback: stylized vector recreations from description if scrubbing kills any sh
 | Checkpoint email series | "ATP Checkpoint Package" or specific checkpoint reference only. Never "Heartbeat." LOCKED |
 | Contact info | [OPEN: Drizzy provides at build time] |
 | "~15 flows" figure | Retired. Use "nearly 20." LOCKED |
+| Compliance stat framing | "Maintained above 90% since launch vs 13% baseline." No other time framing. LOCKED |
+| Org size public figure | 10,000. LOCKED |
+| Leaders-trained unit | Command teams (1,800), never individual headcount. LOCKED |
 
 ---
 
