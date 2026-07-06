@@ -162,6 +162,13 @@ svg.edges{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
   font-family:var(--body);font-size:0.9rem;padding:9px 2px;cursor:pointer;
 }
 .p-connects button:hover{color:var(--gold)}
+.p-media img{cursor:zoom-in}
+.lightbox{
+  position:fixed;inset:0;background:rgba(0,0,0,0.88);display:none;
+  align-items:center;justify-content:center;z-index:1000;cursor:zoom-out;
+}
+.lightbox.open{display:flex}
+.lightbox img{max-width:92vw;max-height:92vh;border:1px solid var(--line);border-radius:6px}
 
 </style>
 </head>
@@ -388,10 +395,22 @@ function renderMedia(id){
       el = document.createElement('img');
       el.src = 'assets/' + f; el.alt = '';
       el.loading = 'lazy';
+      el.addEventListener('click',()=>{
+        lightbox.querySelector('img').src = el.src;
+        lightbox.classList.add('open');
+      });
     }
     box.appendChild(el);
   });
 }
+
+/* ═══════ IMAGE LIGHTBOX ═══════ */
+const lightbox = document.createElement('div');
+lightbox.className = 'lightbox';
+lightbox.appendChild(document.createElement('img'));
+document.body.appendChild(lightbox);
+lightbox.addEventListener('click',()=>lightbox.classList.remove('open'));
+window.addEventListener('keydown',e=>{ if(e.key==='Escape') lightbox.classList.remove('open'); });
 
 /* ═══════ PANEL ═══════ */
 const panel = document.getElementById('panel');
