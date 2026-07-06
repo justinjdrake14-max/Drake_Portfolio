@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>L.I.N.K. | Justin Drake Portfolio</title>
+  <meta name="description" content="L.I.N.K. portfolio gate for Justin Drake, Functional Consultant and Power Platform Developer.">
+  <link rel="icon" type="image/png" href="assets/link-logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #1e1e1e;
+      --panel: #25221e;
+      --panel-soft: #2d2924;
+      --gold: #e8b10e;
+      --gold-bright: #ffcd00;
+      --text: #f4f1eb;
+      --muted: rgba(244, 241, 235, 0.72);
+      --faint: rgba(244, 241, 235, 0.48);
+      --line: rgba(244, 241, 235, 0.14);
+      --green: #63c174;
+      --blue: #7fb4dc;
+      --display: "Barlow Condensed", sans-serif;
+      --body: "IBM Plex Sans", sans-serif;
+      --mono: "IBM Plex Mono", monospace;
+      --wrap: 1120px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at top left, rgba(232, 177, 14, 0.09), transparent 34rem),
+        linear-gradient(135deg, #171717 0%, var(--bg) 48%, #151412 100%);
+      color: var(--text);
+      font-family: var(--body);
+      font-size: 17px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    .wrap {
+      width: min(var(--wrap), calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      border-bottom: 1px solid var(--line);
+      background: rgba(30, 30, 30, 0.88);
+      backdrop-filter: blur(14px);
+    }
+
+    .topbar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 14px 0;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+    }
+
+    .brand img {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      object-fit: contain;
+      border: 1px solid rgba(232, 177, 14, 0.32);
+      background: #0d0c09;
+    }
+
+    .brand-title {
+      font-family: var(--display);
+      font-size: 1.25rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .brand-subtitle {
+      color: var(--faint);
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.06em;
+      white-space: nowrap;
+    }
+
+    .hero {
+      padding: 76px 0 54px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 310px;
+      gap: 42px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      color: var(--gold);
+      font-family: var(--mono);
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      margin-bottom: 18px;
+      text-transform: uppercase;
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: var(--display);
+      line-height: 1.05;
+    }
+
+    h1 {
+      font-size: clamp(3.1rem, 7vw, 5.7rem);
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+    }
+
+    .hero-title span {
+      color: var(--gold-bright);
+    }
+
+    .hero-lead {
+      max-width: 780px;
+      margin-top: 20px;
+      color: var(--text);
+      font-size: clamp(1.18rem, 2vw, 1.42rem);
+      font-weight: 600;
+      line-height: 1.45;
+    }
+
+    .hero-support {
+      max-width: 760px;
+      margin-top: 14px;
+      color: var(--muted);
+      font-size: 1.03rem;
+    }
+
+    .hero-card {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: linear-gradient(180deg, rgba(232, 177, 14, 0.08), rgba(37, 34, 30, 0.96));
+      padding: 22px;
+    }
+
+    .hero-card img.logo {
+      width: 190px;
+      height: 190px;
+      margin: 0 auto 20px;
+      border-radius: 10px;
+      object-fit: contain;
+      border: 1px solid rgba(232, 177, 14, 0.24);
+      background: #0d0c09;
+    }
+
+    .hero-card img.platform {
+      width: 220px;
+      height: auto;
+      margin: 20px auto 0;
+      border-radius: 6px;
+      background: #fff;
+      padding: 10px;
+    }
+
+    .identity {
+      border-top: 1px solid var(--line);
+      padding-top: 16px;
+    }
+
+    .identity strong {
+      display: block;
+      font-family: var(--display);
+      font-size: 1.5rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .identity span {
+      color: var(--muted);
+      display: block;
+      font-size: 0.95rem;
+      margin-top: 3px;
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 30px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      border-radius: 5px;
+      border: 1px solid var(--line);
+      padding: 12px 18px;
+      font-family: var(--mono);
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      transition: transform 0.14s ease, border-color 0.14s ease, background 0.14s ease;
+    }
+
+    .btn:hover,
+    .btn:focus-visible {
+      transform: translateY(-1px);
+      outline: none;
+    }
+
+    .btn.primary {
+      background: var(--gold);
+      border-color: var(--gold);
+      color: #1e1e1e;
+    }
+
+    .btn.primary:hover,
+    .btn.primary:focus-visible {
+      background: var(--gold-bright);
+      border-color: var(--gold-bright);
+    }
+
+    .btn.secondary {
+      background: rgba(244, 241, 235, 0.045);
+      color: var(--text);
+    }
+
+    .btn.secondary:hover,
+    .btn.secondary:focus-visible {
+      border-color: rgba(232, 177, 14, 0.7);
+      color: var(--gold-bright);
+    }
+
+    section {
+      padding: 56px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: 260px minmax(0, 1fr);
+      gap: 34px;
+      align-items: start;
+      margin-bottom: 26px;
+    }
+
+    h2 {
+      font-size: clamp(2.2rem, 4.2vw, 3.2rem);
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .section-head p {
+      color: var(--muted);
+      max-width: 720px;
+    }
+
+    .brief-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .brief-item,
+    .impact-item,
+    .artifact,
+    .role-card {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(37, 34, 30, 0.74);
+    }
+
+    .brief-item {
+      padding: 22px;
+    }
+
+    .brief-item h3 {
+      color: var(--gold-bright);
+      font-size: 1.4rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+    }
+
+    .brief-item p,
+    .role-card p,
+    .artifact p {
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
+
+    .outcome-stat {
+      color: var(--green);
+      display: inline-block;
+      font-family: var(--display);
+      font-size: 1.45rem;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      line-height: 1.05;
+      text-transform: uppercase;
+    }
+
+    .impact-panel {
+      border-radius: 8px;
+      background:
+        linear-gradient(135deg, rgba(99, 193, 116, 0.13), transparent 42%),
+        linear-gradient(180deg, rgba(45, 41, 36, 0.96), rgba(37, 34, 30, 0.96));
+      border: 1px solid rgba(99, 193, 116, 0.28);
+      padding: 28px;
+    }
+
+    .impact-panel .lead {
+      color: var(--text);
+      font-family: var(--display);
+      font-size: clamp(1.9rem, 4vw, 3rem);
+      font-weight: 700;
+      line-height: 1.1;
+      text-transform: uppercase;
+    }
+
+    .impact-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .impact-item {
+      padding: 18px;
+      background: rgba(30, 30, 30, 0.42);
+    }
+
+    .impact-item strong {
+      color: var(--green);
+      display: block;
+      font-family: var(--display);
+      font-size: 2rem;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .impact-item span {
+      color: var(--muted);
+      display: block;
+      font-size: 0.9rem;
+      line-height: 1.35;
+    }
+
+    .role-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .role-card {
+      padding: 20px;
+    }
+
+    .role-card h3 {
+      color: var(--text);
+      font-size: 1.35rem;
+      letter-spacing: 0.04em;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+    }
+
+    .tool-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .tag {
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--muted);
+      background: rgba(244, 241, 235, 0.04);
+      font-family: var(--mono);
+      font-size: 0.76rem;
+      padding: 8px 11px;
+      white-space: nowrap;
+    }
+
+    .tag.gold {
+      border-color: rgba(232, 177, 14, 0.46);
+      color: var(--gold-bright);
+    }
+
+    .artifact-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .artifact {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 220px;
+      padding: 20px;
+      transition: transform 0.14s ease, border-color 0.14s ease, background 0.14s ease;
+    }
+
+    .artifact:hover,
+    .artifact:focus-visible {
+      transform: translateY(-2px);
+      border-color: rgba(232, 177, 14, 0.68);
+      background: rgba(45, 41, 36, 0.96);
+      outline: none;
+    }
+
+    .artifact .type {
+      color: var(--gold);
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      margin-bottom: 18px;
+      text-transform: uppercase;
+    }
+
+    .artifact h3 {
+      font-size: 1.55rem;
+      letter-spacing: 0.04em;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+    }
+
+    .artifact .action {
+      color: var(--gold-bright);
+      font-family: var(--mono);
+      font-size: 0.76rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      margin-top: 22px;
+      text-transform: uppercase;
+    }
+
+    .contact-box {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 24px;
+      align-items: center;
+      border: 1px solid rgba(232, 177, 14, 0.28);
+      border-radius: 8px;
+      background: rgba(37, 34, 30, 0.82);
+      padding: 28px;
+    }
+
+    .contact-box h2 {
+      margin-bottom: 10px;
+    }
+
+    .contact-lines {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 18px;
+      color: var(--muted);
+      margin-top: 14px;
+    }
+
+    .contact-lines a {
+      color: var(--gold-bright);
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      color: var(--faint);
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.06em;
+      padding: 26px 0;
+      text-align: center;
+    }
+
+    @media (max-width: 920px) {
+      .hero-grid,
+      .section-head,
+      .contact-box {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-card {
+        max-width: 420px;
+      }
+
+      .brief-grid,
+      .role-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .impact-grid,
+      .artifact-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 640px) {
+      body {
+        font-size: 16px;
+      }
+
+      .wrap {
+        width: min(100% - 28px, var(--wrap));
+      }
+
+      .topbar {
+        position: static;
+      }
+
+      .topbar-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .top-links {
+        justify-content: flex-start;
+      }
+
+      .hero {
+        padding-top: 46px;
+      }
+
+      .hero-card img.logo {
+        width: 150px;
+        height: 150px;
+      }
+
+      .cta-row .btn {
+        width: 100%;
+      }
+
+      .impact-grid,
+      .artifact-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* ── Resume overlay ── */
+    .resume-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 60;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      background: rgba(13, 12, 9, 0.82);
+      backdrop-filter: blur(6px);
+    }
+    .resume-modal.open { display: flex; }
+    .resume-shell {
+      position: relative;
+      width: min(920px, 100%);
+      height: min(88vh, 1100px);
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    .resume-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--line);
+    }
+    .resume-head strong {
+      font-family: var(--display);
+      font-size: 1.15rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .resume-head a {
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--muted);
+      border: 1px solid var(--line);
+      border-radius: 4px;
+      padding: 6px 12px;
+    }
+    .resume-head a:hover { color: var(--gold); border-color: var(--gold); }
+    .resume-close {
+      background: none;
+      border: 1px solid var(--line);
+      border-radius: 4px;
+      color: var(--text);
+      font-size: 18px;
+      line-height: 1;
+      padding: 6px 11px;
+      cursor: pointer;
+    }
+    .resume-close:hover { color: var(--gold); border-color: var(--gold); }
+    .resume-frame { flex: 1; width: 100%; border: 0; background: #fff; }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <a class="brand" href="#top" aria-label="Back to top">
+        <img src="assets/link-logo.png" alt="L.I.N.K. compass logo">
+        <div>
+          <div class="brand-title">L.I.N.K.</div>
+          <div class="brand-subtitle">Power Platform Portfolio</div>
+        </div>
+      </a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <p class="eyebrow">Justin J. Drake | Functional Consultant | Power Platform Developer</p>
+          <h1 class="hero-title">L.I.N.K. <span>Leader's Integration and Navigation Kit</span></h1>
+          <p class="hero-lead">A comprehensive Power Platform solution for training visibility, certification tracking, and point-of-need resource delivery across the Army recruiting enterprise.</p>
+          <p class="hero-support">Built to standardize new recruiter onboarding, give leaders real-time situational awareness, and turn scattered training activity into an accountable enterprise workflow.</p>
+          <div class="cta-row" aria-label="Primary actions">
+            <a class="btn primary" href="assets/justin-drake-resume.pdf" target="_blank" rel="noopener">View Resume</a>
+            <a class="btn secondary" href="link-system-map.html">Explore Interactive Solution Architecture</a>
+            <a class="btn secondary" href="project-story.html">Watch the Project Story</a>
+            <a class="btn secondary" href="mailto:justinjdrake14@gmail.com">Contact Justin</a>
+          </div>
+        </div>
+        <aside class="hero-card" aria-label="Project identity">
+          <img class="logo" src="assets/link-logo.png" alt="L.I.N.K. compass logo">
+          <div class="identity">
+            <strong>Justin Drake</strong>
+            <span>Active Secret Clearance</span>
+            <span>Master of Business Administration</span>
+            <span>Fort Knox, Kentucky</span>
+          </div>
+          <img class="platform" src="assets/power-platform-logo.png" alt="Microsoft Power Platform logo">
+        </aside>
+      </div>
+    </section>
+
+    <section id="brief">
+      <div class="wrap">
+        <div class="brief-grid">
+          <article class="brief-item">
+            <h3>The Problem</h3>
+            <p>New Army recruiters entered one of the Army's most mission-critical roles without a fully standardized onboarding system or a reliable enterprise method to track training progress. That created uneven training execution, weak leader visibility, and avoidable risk inside the organization responsible for sustaining the all-volunteer Army.</p>
+          </article>
+          <article class="brief-item">
+            <h3>The Solution</h3>
+            <p>L.I.N.K., the Leader's Integration and Navigation Kit, is a comprehensive Power Platform solution that gives Army recruiting leaders real-time visibility over training status, certification progress, and point-of-need resource delivery.</p>
+          </article>
+          <article class="brief-item">
+            <h3>The Scale</h3>
+            <p>Built for a 10,000+ person recruiting enterprise responsible for ensuring the Army can continue filling its ranks through an all-volunteer force.</p>
+          </article>
+          <article class="brief-item">
+            <h3>The Constraints</h3>
+            <p>Delivered inside a GCC High environment using standard licensing, limited personnel, limited platform expertise, and the practical constraints of a large government enterprise.</p>
+          </article>
+          <article class="brief-item">
+            <h3>The Outcome</h3>
+            <p><strong class="outcome-stat">4% estimated increase</strong> to total organizational production, supported by record-high new recruiter training completion, stronger training delivery, improved leader visibility, and a projected 10% first-year production lift for new recruiters.</p>
+          </article>
+          <article class="brief-item">
+            <h3>My Role</h3>
+            <p>Served as Functional Consultant and Power Platform Developer: defined the business problem, mapped the process, built the solution, connected the data, briefed stakeholders, and supported adoption across the force.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="impact">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <h2>Impact</h2>
+          </div>
+        </div>
+
+        <div class="impact-panel">
+          <div class="impact-grid">
+            <div class="impact-item">
+              <strong>2,000+</strong>
+              <span>Users registered within the first four weeks.</span>
+            </div>
+            <div class="impact-item">
+              <strong>Record</strong>
+              <span>New recruiter training reached its highest recorded completion level.</span>
+            </div>
+            <div class="impact-item">
+              <strong>10%</strong>
+              <span>Projected first-year production lift for new recruiters.</span>
+            </div>
+            <div class="impact-item">
+              <strong>4%</strong>
+              <span>Estimated increase to total organizational production.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="proof">
+      <div class="wrap">
+        <div class="artifact-grid">
+          <a class="artifact" href="assets/justin-drake-resume.pdf" target="_blank" rel="noopener">
+            <div>
+              <div class="type">PDF</div>
+              <h3>Resume</h3>
+              <p>Formal qualifications, experience, education, clearance, and SkillBridge positioning.</p>
+            </div>
+            <span class="action">View Resume</span>
+          </a>
+          <a class="artifact" href="link-system-map.html">
+            <div>
+              <div class="type">Interactive</div>
+              <h3>Solution Architecture</h3>
+              <p>Technical map of apps, data sources, workflows, reports, Vantage integration, and user touchpoints.</p>
+            </div>
+            <span class="action">Explore Architecture</span>
+          </a>
+          <a class="artifact" href="project-story.html">
+            <div>
+              <div class="type">Video</div>
+              <h3>Project Story</h3>
+              <p>The business problem, conception, build, deployment, and impact of L.I.N.K.</p>
+            </div>
+            <span class="action">Watch the Project Story</span>
+          </a>
+          <a class="artifact" href="mailto:justinjdrake14@gmail.com">
+            <div>
+              <div class="type">Contact</div>
+              <h3>Next Step</h3>
+              <p>For SkillBridge, Functional Consultant, Power Platform Developer, or related federal modernization roles.</p>
+            </div>
+            <span class="action">Contact Justin</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="wrap">
+        <div class="contact-box">
+          <div>
+            <p class="eyebrow">Contact</p>
+            <h2>Justin J. Drake</h2>
+            <p>Functional Consultant | Power Platform Developer | Active Secret Clearance</p>
+            <div class="contact-lines">
+              <a href="mailto:justinjdrake14@gmail.com">justinjdrake14@gmail.com</a>
+              <a href="tel:+19896701687">(989) 670-1687</a>
+              <a href="https://www.linkedin.com/in/justin-drake-a0b46056">linkedin.com/in/justin-drake-a0b46056</a>
+            </div>
+          </div>
+          <a class="btn primary" href="mailto:justinjdrake14@gmail.com">Email Justin</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">L.I.N.K. portfolio gate | Built for hiring managers, recruiters, and Power Platform delivery teams.</div>
+  </footer>
+
+  <div class="resume-modal" id="resumeModal" role="dialog" aria-modal="true" aria-label="Resume">
+    <div class="resume-shell">
+      <div class="resume-head">
+        <strong>Justin J. Drake · Resume</strong>
+        <div style="display:flex;align-items:center;gap:10px">
+          <a href="assets/justin-drake-resume.pdf" target="_blank" rel="noopener">Open PDF in new tab</a>
+          <button class="resume-close" id="resumeClose" aria-label="Close resume">&times;</button>
+        </div>
+      </div>
+      <iframe class="resume-frame" id="resumeFrame" title="Resume PDF"></iframe>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      var modal = document.getElementById('resumeModal');
+      var frame = document.getElementById('resumeFrame');
+      var pdf = 'assets/justin-drake-resume.pdf';
+      function openModal(e) {
+        e.preventDefault();
+        if (!frame.getAttribute('src')) frame.setAttribute('src', pdf);
+        modal.classList.add('open');
+        document.body.style.overflow = 'hidden';
+      }
+      function closeModal() {
+        modal.classList.remove('open');
+        document.body.style.overflow = '';
+      }
+      document.querySelectorAll('a[href="' + pdf + '"]').forEach(function (a) {
+        if (a.closest('.resume-head')) return;
+        a.addEventListener('click', openModal);
+      });
+      document.getElementById('resumeClose').addEventListener('click', closeModal);
+      modal.addEventListener('click', function (e) { if (e.target === modal) closeModal(); });
+      window.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeModal(); });
+    })();
+  </script>
+</body>
+</html>
